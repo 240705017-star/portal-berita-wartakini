@@ -1,4 +1,4 @@
-# Portal Berita WartaKini (Laravel CRUD)
+﻿# Portal Berita WartaKini (Laravel CRUD)
 
 Aplikasi portal berita berbasis Laravel dengan fitur autentikasi penulis, dasbor redaksi, dan manajemen artikel (CRUD).
 
@@ -17,5 +17,5 @@ php artisan serve
 Setelah server berjalan, buka http://127.0.0.1:8000 di browser.
 
 ## Akun Demo (Seeder)
-- Email: praktikan@example.com
-- Password: password
+- Email: 240705017@student.ar-ranir.ac.id
+- Password: 123456789

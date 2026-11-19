@@ -4,87 +4,6 @@
 
 @push('styles')
 <style>
-    /* Executive Studio Banner */
-    .studio-hero {
-        background: linear-gradient(135deg, #0f172a 0%, #1e293b 55%, #172554 100%);
-        color: #ffffff;
-        border-radius: 20px;
-        padding: 2.25rem 2.5rem;
-        margin-bottom: 1.75rem;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 20px 35px -12px rgba(15, 23, 42, 0.25);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 1.75rem;
-    }
-    .studio-hero::before {
-        content: '';
-        position: absolute;
-        width: 380px;
-        height: 380px;
-        background: radial-gradient(circle, rgba(37, 99, 235, 0.32) 0%, transparent 70%);
-        top: -130px;
-        right: -60px;
-        pointer-events: none;
-    }
-    .studio-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.45rem;
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        color: #93c5fd;
-        font-size: 0.72rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        padding: 0.3rem 0.8rem;
-        border-radius: 999px;
-        margin-bottom: 0.75rem;
-    }
-    .studio-hero h1 {
-        margin: 0 0 0.4rem 0;
-        font-size: 1.85rem;
-        font-weight: 800;
-        letter-spacing: -0.025em;
-    }
-    .studio-hero p {
-        margin: 0;
-        color: #cbd5e1;
-        font-size: 0.94rem;
-        max-width: 520px;
-    }
-    .studio-stats {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        position: relative;
-        z-index: 1;
-    }
-    .glass-stat {
-        background: rgba(255, 255, 255, 0.07);
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        backdrop-filter: blur(8px);
-        padding: 0.85rem 1.25rem;
-        border-radius: 14px;
-        min-width: 120px;
-    }
-    .glass-stat-num {
-        font-size: 1.5rem;
-        font-weight: 800;
-        line-height: 1.1;
-        color: #ffffff;
-    }
-    .glass-stat-label {
-        font-size: 0.75rem;
-        color: #94a3b8;
-        margin-top: 0.2rem;
-        font-weight: 500;
-    }
-
     /* Filter & Search Control Bar */
     .control-bar {
         background: var(--bg-surface);
@@ -332,25 +251,20 @@
     @endphp
 
     {{-- Executive Studio Header --}}
-    <section class="studio-hero">
+    <section class="page-hero">
         <div>
-            <div class="studio-badge">
-                <span>Editorial Studio &bull; WartaKini</span>
+            <div class="page-hero-badge">
+                <span>Editorial Studio &bull; {{ $articles->total() }} Publikasi Aktif</span>
             </div>
             <h1>Manajemen Publikasi Berita</h1>
             <p>
-                Pusat kendali seluruh liputan redaksi. Sunting naskah, pantau status tayang, dan terbitkan berita terbaru.
+                Pusat kendali seluruh liputan redaksi. Sunting naskah, pantau status tayang, dan terbitkan berita terbaru ke portal.
             </p>
         </div>
 
-        <div class="studio-stats">
-            <div class="glass-stat">
-                <div class="glass-stat-num">{{ $articles->total() }}</div>
-                <div class="glass-stat-label">Total Publikasi</div>
-            </div>
-            <a href="{{ route('articles.create') }}" class="btn btn-primary" style="padding: 0.8rem 1.35rem; font-size: 0.92rem;">
-                + Tulis Berita Baru
-            </a>
+        <div class="page-hero-actions">
+            <a href="{{ route('dashboard') }}" class="btn btn-glass">&larr; Dasbor</a>
+            <a href="{{ route('articles.create') }}" class="btn btn-primary">+ Tulis Berita Baru</a>
         </div>
     </section>
 

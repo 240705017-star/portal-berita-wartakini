@@ -29,6 +29,9 @@
             --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.07), 0 4px 10px -6px rgba(15, 23, 42, 0.05);
         }
 
+        html {
+            scrollbar-gutter: stable;
+        }
         * { box-sizing: border-box; }
         body {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -176,6 +179,80 @@
         }
         .btn-danger-ghost:hover { background: var(--danger-soft); }
 
+        /* Unified Executive Page Banner */
+        .page-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 58%, #172554 100%);
+            color: #ffffff;
+            border-radius: 18px;
+            padding: 2.15rem 2.5rem;
+            min-height: 168px;
+            margin-bottom: 1.75rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.28) 0%, transparent 70%);
+            top: -120px;
+            right: -80px;
+            pointer-events: none;
+        }
+        .page-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: rgba(37, 99, 235, 0.22);
+            border: 1px solid rgba(96, 165, 250, 0.35);
+            color: #93c5fd;
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.3rem 0.75rem;
+            border-radius: 999px;
+            margin-bottom: 0.7rem;
+        }
+        .page-hero h1 {
+            margin: 0 0 0.4rem 0;
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            line-height: 1.25;
+        }
+        .page-hero p {
+            margin: 0;
+            color: #cbd5e1;
+            font-size: 0.94rem;
+            max-width: 540px;
+            line-height: 1.55;
+        }
+        .page-hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            position: relative;
+            z-index: 1;
+        }
+        .btn-glass {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            backdrop-filter: blur(6px);
+        }
+        .btn-glass:hover {
+            background: rgba(255, 255, 255, 0.18);
+            color: #ffffff;
+        }
+
         /* Shared Card & Form Elements (for Dashboard & CRUD) */
         main.page-content {
             flex: 1;
@@ -261,6 +338,9 @@
             gap: 0.5rem;
         }
 
+        @media (max-width: 900px) {
+            .page-hero { padding: 1.75rem; min-height: auto; }
+        }
         @media (max-width: 720px) {
             .nav-inner { height: auto; padding: 0.85rem 0; flex-wrap: wrap; }
         }

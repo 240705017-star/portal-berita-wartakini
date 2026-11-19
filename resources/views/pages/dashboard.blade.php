@@ -4,78 +4,6 @@
 
 @push('styles')
 <style>
-    /* Executive Welcome Banner (Senada dengan Brand Panel Login & CTA Beranda) */
-    .dash-hero {
-        background: linear-gradient(135deg, #0f172a 0%, #1e293b 58%, #172554 100%);
-        color: #ffffff;
-        border-radius: 18px;
-        padding: 2.25rem 2.5rem;
-        margin-bottom: 1.75rem;
-        position: relative;
-        overflow: hidden;
-        box-shadow: var(--shadow-md);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-    }
-    .dash-hero::after {
-        content: '';
-        position: absolute;
-        width: 360px;
-        height: 360px;
-        background: radial-gradient(circle, rgba(37, 99, 235, 0.28) 0%, transparent 70%);
-        top: -120px;
-        right: -80px;
-        pointer-events: none;
-    }
-    .dash-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.45rem;
-        background: rgba(37, 99, 235, 0.22);
-        border: 1px solid rgba(96, 165, 250, 0.35);
-        color: #93c5fd;
-        font-size: 0.75rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        padding: 0.3rem 0.75rem;
-        border-radius: 999px;
-        margin-bottom: 0.75rem;
-    }
-    .dash-hero h1 {
-        margin: 0 0 0.4rem 0;
-        font-size: 1.85rem;
-        font-weight: 800;
-        letter-spacing: -0.025em;
-        line-height: 1.25;
-    }
-    .dash-hero p {
-        margin: 0;
-        color: #cbd5e1;
-        font-size: 0.95rem;
-        max-width: 540px;
-    }
-    .dash-hero-actions {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        position: relative;
-        z-index: 1;
-    }
-    .btn-glass {
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        color: #ffffff;
-        backdrop-filter: blur(6px);
-    }
-    .btn-glass:hover {
-        background: rgba(255, 255, 255, 0.18);
-        color: #ffffff;
-    }
-
     /* Metric Cards */
     .stats-grid {
         display: grid;
@@ -287,7 +215,6 @@
     @media (max-width: 900px) {
         .stats-grid { grid-template-columns: 1fr; }
         .dash-workspace { grid-template-columns: 1fr; }
-        .dash-hero { padding: 1.75rem; }
     }
 </style>
 @endpush
@@ -299,9 +226,9 @@
     @endphp
 
     {{-- Executive Welcome Banner --}}
-    <section class="dash-hero">
+    <section class="page-hero">
         <div>
-            <div class="dash-badge">
+            <div class="page-hero-badge">
                 <span>Ruang Redaksi Digital &bull; {{ now()->translatedFormat('d F Y') }}</span>
             </div>
             <h1>Selamat datang, {{ $user->name }}!</h1>
@@ -310,7 +237,7 @@
             </p>
         </div>
 
-        <div class="dash-hero-actions">
+        <div class="page-hero-actions">
             <a href="{{ route('articles.index') }}" class="btn btn-glass">Kelola Arsip</a>
             <a href="{{ route('articles.create') }}" class="btn btn-primary">+ Tulis Berita Baru</a>
         </div>

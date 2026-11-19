@@ -1,14 +1,21 @@
-﻿# Portal Berita WartaKini (Laravel CRUD)
+# Portal Berita WartaKini (Laravel CRUD)
 
 Aplikasi portal berita berbasis Laravel dengan fitur autentikasi penulis, dasbor redaksi, dan manajemen artikel (CRUD).
 
-## Cara Menjalankan Projek
-1. Jalankan `composer install`
-2. Salin `.env.example` menjadi `.env`, lalu sesuaikan konfigurasi database
-3. Jalankan `php artisan key:generate`
-4. Jalankan `php artisan migrate:fresh --seed`
-5. Jalankan `php artisan serve` dan buka `http://127.0.0.1:8000`
+## Cara Cepat Menjalankan Projek
+
+```bash
+git clone https://github.com/240705017-star/portal-berita-wartakini.git
+cd portal-berita-wartakini
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate:fresh --seed
+php artisan serve
+```
+
+Setelah server berjalan, buka http://127.0.0.1:8000 di browser.
 
 ## Akun Demo (Seeder)
-- **Email:** `praktikan@example.com`
-- **Password:** `password`
+- Email: praktikan@example.com
+- Password: password
